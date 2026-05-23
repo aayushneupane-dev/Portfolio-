@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Aayush Neupane | Portfolio</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Prevents iOS Safari from artificially boosting text sizes */
+        html {
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            scroll-behavior: smooth;
+        }
+
+        /* Essential fallback fix for older iOS device momentum scrolling */
+        body {
+            -webkit-overflow-scrolling: touch;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .neon-glow-cyan { text-shadow: 0 0 15px rgba(6, 182, 212, 0.7); }
+        .neon-glow-pink { text-shadow: 0 0 15px rgba(236, 72, 153, 0.7); }
+        
+        .gradient-border {
+            background: linear-gradient(90deg, #06b6d4, #ec4899, #8b5cf6);
+            padding: 2px;
+            border-radius: 1rem;
+        }
+
+        /* Native Media Query override to handle ultra-small viewports and micro-screens (< 360px) */
+        @media (max-width: 360px) {
+            h1 { font-size: 2.25rem !important; line-height: 2.5rem !important; }
+            .hero-btn { width: 100% !important; text-align: center; }
+            .navbar-brand { font-size: 1.1rem !important; }
+        }
+    </style>
+</head>
+<body class="bg-[#0b0f19] text-gray-100 font-sans overflow-x-hidden w-full">
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#0b0f19]/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <a href="#" class="navbar-brand text-xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500">AN.DEV</a>
+            <div class="space-x-8 hidden md:flex font-medium">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-pink-500 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-amber-400 transition-colors">Projects</a>
+                <a href="#hackathons" class="hover:text-amber-400 transition-colors">Hackathons</a>
+                <a href="#experience" class="hover:text-purple-400 transition-colors">Experience</a>
+                <a href="#certifications" class="hover:text-cyan-400 transition-colors">Certifications</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center justify-center relative px-4 sm:px-6 pt-24 pb-12 overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-48 sm:w-72 h-48 sm:h-72 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+
+        <div class="text-center z-10 max-w-3xl w-full" data-aos="zoom-in" data-aos-duration="1200">
+            <span class="px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-gray-800 border border-gray-700 text-cyan-400 inline-block">Welcome to my space</span>
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight mt-6 mb-4 leading-tight">
+                Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-purple-500">Aayush Neupane</span>
+            </h1>
+            
+            <div class="text-lg sm:text-xl md:text-2xl font-bold text-gray-400 min-h-[50px] px-2">
+                <span id="typed"></span>
+            </div>
+
+            <p class="mt-4 text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed px-2">
+                Passionate about technology, innovation, and creativity. Bridging the gap between beautiful user interfaces and robust data-driven intelligent backends.
+            </p>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center w-full px-4 sm:px-0">
+                <a href="#projects" class="hero-btn w-full sm:w-auto px-6 sm:px-8 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-bold shadow-lg shadow-cyan-500/20 hover:scale-105 transition-transform duration-300 text-sm sm:text-base">View My Work</a>
+                <a href="#skills" class="hero-btn w-full sm:w-auto px-6 sm:px-8 py-3.5 bg-transparent border-2 border-pink-500 rounded-xl font-bold hover:bg-pink-500/10 hover:scale-105 transition-all duration-300 text-pink-400 text-sm sm:text-base text-center">My Stack</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="gradient-border" data-aos="fade-up">
+            <div class="bg-[#111827] rounded-[14px] p-6 sm:p-12 flex flex-col md:flex-row gap-6 md:gap-8 items-center">
+                <div class="w-full md:w-1/3 text-center md:text-left">
+                    <div class="inline-block p-4 bg-gray-800/50 rounded-2xl border border-gray-700 text-pink-500 text-3xl sm:text-4xl mb-3 md:mb-4">
+                        <i class="fa-solid fa-rocket animate-bounce"></i>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-black text-white">Tech Explorer</h2>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <p class="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed text-center md:text-left">
+                        Whether it's building highly responsive, pixel-perfect user experiences or engineering efficient machine learning models and robotic applications, I dive headfirst into complex problems. I love turning vibrant ideas into structured, clean operational realities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 sm:mb-16" data-aos="fade-down">
+            <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase">Technical <span class="text-cyan-400 neon-glow-cyan">Arsenal</span></h2>
+            <p class="text-gray-400 text-xs sm:text-sm mt-2">The technology stacks I experiment with, build on, and master.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <div class="bg-[#111726] border border-cyan-500/30 rounded-2xl p-6 sm:p-8 hover:shadow-xl hover:shadow-cyan-500/5 transition-all duration-300" data-aos="fade-right">
+                <div class="flex items-center gap-4 mb-4 sm:mb-6">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-400 text-lg sm:text-xl font-bold">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-black text-white">Frontend Development</h3>
+                </div>
+                <ul class="space-y-3 sm:space-y-4 text-sm sm:text-base">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-cyan-400 flex-shrink-0"></i> HTML5 & CSS3 <span class="text-[10px] bg-cyan-900/40 text-cyan-400 px-2 py-0.5 rounded ml-auto font-semibold">Advanced</span></li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-cyan-400 flex-shrink-0"></i> JavaScript (ES6+)</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-cyan-400 flex-shrink-0"></i> React.js & Component Design</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-cyan-400 flex-shrink-0"></i> Responsive Web Design</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-cyan-400 flex-shrink-0"></i> UI/UX Best Practices & CSS Frameworks</li>
+                </ul>
+            </div>
+
+            <div class="bg-[#111726] border border-pink-500/30 rounded-2xl p-6 sm:p-8 hover:shadow-xl hover:shadow-pink-500/5 transition-all duration-300" data-aos="fade-left">
+                <div class="flex items-center gap-4 mb-4 sm:mb-6">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-500/10 rounded-xl flex items-center justify-center text-pink-400 text-lg sm:text-xl font-bold">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-black text-white">Data Science</h3>
+                </div>
+                <ul class="space-y-3 sm:space-y-4 text-sm sm:text-base">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-pink-500 flex-shrink-0"></i> Python Programming</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-pink-500 flex-shrink-0"></i> Data Analysis (Pandas, NumPy)</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-pink-500 flex-shrink-0"></i> Data Visualization (Matplotlib, Seaborn)</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-pink-500 flex-shrink-0"></i> Machine Learning (Scikit-learn)</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-pink-500 flex-shrink-0"></i> Statistical Analysis & Deep Learning</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 sm:mb-16" data-aos="fade-down">
+            <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase">Featured <span class="text-pink-500 neon-glow-pink">Projects</span></h2>
+            <p class="text-gray-400 text-xs sm:text-sm mt-2">A curated selection of machine learning models, IoT systems, and applications.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            
+            <div class="bg-[#111827] border border-cyan-500/20 rounded-2xl p-5 sm:p-6 flex flex-col justify-between hover:border-cyan-500/60 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-2xl sm:text-3xl">🏥</span>
+                        <div class="text-gray-400"><a href="https://github.com/aayushneupane-dev" target="_blank" class="hover:text-cyan-400"><i class="fa-brands fa-github text-xl"></i></a></div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black text-white">Medical Insurance Cost Prediction</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-2 leading-relaxed">
+                        A supervised machine learning system engineered to predict medical insurance expenses based on physical and lifestyle metrics.
+                    </p>
+                    <div class="mt-4 space-y-0.5">
+                        <div class="text-xs text-cyan-400 font-semibold"><i class="fa-solid fa-brain mr-1"></i> Random Forest</div>
+                        <div class="text-[11px] text-gray-500">Minimizes overfitting dynamics</div>
+                    </div>
+                </div>
+                <div class="mt-5 flex flex-wrap gap-2">
+                    <span class="text-[10px] font-mono bg-cyan-950/50 text-cyan-400 px-2 py-0.5 rounded border border-cyan-900/50">Python</span>
+                    <span class="text-[10px] font-mono bg-cyan-950/50 text-cyan-400 px-2 py-0.5 rounded border border-cyan-900/50">Scikit-Learn</span>
+                </div>
+            </div>
+
+            <div class="bg-[#111827] border border-pink-500/20 rounded-2xl p-5 sm:p-6 flex flex-col justify-between hover:border-pink-500/60 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-2xl sm:text-3xl">♻️</span>
+                        <div class="text-gray-400"><a href="https://github.com/aayushneupane-dev" target="_blank" class="hover:text-pink-400"><i class="fa-brands fa-github text-xl"></i></a></div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black text-white">Smart Waste Management System</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-2 leading-relaxed">
+                        A real-time IoT platform monitoring urban waste matrices. Features dynamic container fill level analytics and automated threshold alerts.
+                    </p>
+                    <div class="mt-4 space-y-0.5">
+                        <div class="text-xs text-pink-400 font-semibold"><i class="fa-solid fa-microchip mr-1"></i> Hardware Build</div>
+                        <div class="text-[11px] text-gray-500">Arduino Serial & SQLite3 logs</div>
+                    </div>
+                </div>
+                <div class="mt-5 flex flex-wrap gap-2">
+                    <span class="text-[10px] font-mono bg-pink-950/50 text-pink-400 px-2 py-0.5 rounded border border-pink-900/50">Flask</span>
+                    <span class="text-[10px] font-mono bg-pink-950/50 text-pink-400 px-2 py-0.5 rounded border border-pink-900/50">Arduino</span>
+                </div>
+            </div>
+
+            <div class="bg-[#111827] border border-purple-500/20 rounded-2xl p-5 sm:p-6 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-2xl sm:text-3xl">🏏</span>
+                        <div class="text-gray-400"><a href="https://github.com/aayushneupane-dev" target="_blank" class="hover:text-purple-400"><i class="fa-brands fa-github text-xl"></i></a></div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black text-white">T20 Cricket Stats Super Analyzer</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-2 leading-relaxed">
+                        An interactive simulator and mathematical statistical dashboard exploring team configurations and custom graph plotting profiles.
+                    </p>
+                </div>
+                <div class="mt-5 flex flex-wrap gap-2">
+                    <span class="text-[10px] font-mono bg-purple-950/50 text-purple-400 px-2 py-0.5 rounded border border-purple-900/50">Python</span>
+                    <span class="text-[10px] font-mono bg-purple-950/50 text-purple-400 px-2 py-0.5 rounded border border-purple-900/50">Matplotlib</span>
+                </div>
+            </div>
+
+            <div class="bg-[#111827] border border-amber-500/20 rounded-2xl p-5 sm:p-6 flex flex-col justify-between hover:border-amber-500/60 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-2xl sm:text-3xl">📦</span>
+                        <div class="text-gray-400"><a href="https://github.com/aayushneupane-dev" target="_blank" class="hover:text-amber-400"><i class="fa-brands fa-github text-xl"></i></a></div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black text-white">Amazon Platform Clone</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-2 leading-relaxed">
+                        An e-commerce storefront simulation mirroring full responsive product grid displays and layout frameworks.
+                    </p>
+                </div>
+                <div class="mt-5 flex flex-wrap gap-2">
+                    <span class="text-[10px] font-mono bg-amber-950/50 text-amber-400 px-2 py-0.5 rounded border border-amber-900/50">React.js</span>
+                    <span class="text-[10px] font-mono bg-amber-950/50 text-amber-400 px-2 py-0.5 rounded border border-amber-900/50">Tailwind</span>
+                </div>
+            </div>
+
+            <div class="bg-[#111827] border border-red-500/20 rounded-2xl p-5 sm:p-6 flex flex-col justify-between hover:border-red-500/60 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-2xl sm:text-3xl">🎬</span>
+                        <div class="text-gray-400"><a href="https://github.com/aayushneupane-dev" target="_blank" class="hover:text-red-400"><i class="fa-brands fa-github text-xl"></i></a></div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black text-white">Netflix UI/UX Clone</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-2 leading-relaxed">
+                        High-fidelity reproduction of a premier media streaming platform. Focuses on horizontal banner carousels and modern overlay styling rules.
+                    </p>
+                </div>
+                <div class="mt-5 flex flex-wrap gap-2">
+                    <span class="text-[10px] font-mono bg-red-950/50 text-red-400 px-2 py-0.5 rounded border border-red-900/50">HTML5</span>
+                    <span class="text-[10px] font-mono bg-red-950/50 text-red-400 px-2 py-0.5 rounded border border-red-900/50">CSS3</span>
+                </div>
+            </div>
+
+            <div class="bg-[#111827] border border-emerald-500/20 rounded-2xl p-5 sm:p-6 flex flex-col justify-between hover:border-emerald-500/60 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-2xl sm:text-3xl">🏢</span>
+                        <div class="text-gray-400"><a href="https://github.com/aayushneupane-dev" target="_blank" class="hover:text-emerald-400"><i class="fa-brands fa-github text-xl"></i></a></div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black text-white">Cotiviti Nepal UI Clone</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-2 leading-relaxed">
+                        A structured clone of the corporate landing architecture of Cotiviti Nepal. Showcases meticulous layouts and typography hierarchies.
+                    </p>
+                </div>
+                <div class="mt-5 flex flex-wrap gap-2">
+                    <span class="text-[10px] font-mono bg-emerald-950/50 text-emerald-400 px-2 py-0.5 rounded border border-emerald-900/50">HTML5</span>
+                    <span class="text-[10px] font-mono bg-emerald-950/50 text-emerald-400 px-2 py-0.5 rounded border border-emerald-900/50">Advanced CSS</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="hackathons" class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 sm:mb-16" data-aos="fade-down">
+            <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase">Hackathons & <span class="text-cyan-400 neon-glow-cyan">Arenas</span></h2>
+            <p class="text-gray-400 text-xs sm:text-sm mt-2">Sprinting, prototyping, and deploying technology under pressure.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <div class="bg-[#111726] border border-amber-500/30 rounded-2xl p-6 sm:p-8 hover:shadow-xl transition-all duration-300" data-aos="fade-right">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-400 text-xl sm:text-2xl font-bold flex-shrink-0">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-900/30 px-2 py-0.5 rounded border border-amber-800/50">Winner</span>
+                            <h3 class="text-xl font-black text-white mt-0.5">Tech Connect Hackathon</h3>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xs sm:text-sm text-gray-400 font-semibold mb-2"><i class="fa-solid fa-building-columns mr-1 text-gray-500"></i> Herald College Kathmandu</p>
+                <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4">
+                    Competed in an intensive Hardware & Software integration sprint. Developed functional prototypes pairing operational hardware matrices to solve real-world complexities.
+                </p>
+                <span class="text-xs font-mono text-gray-500 block"><i class="fa-solid fa-calendar-days mr-1"></i> Feb 6, 2025</span>
+            </div>
+
+            <div class="bg-[#111726] border border-cyan-500/30 rounded-2xl p-6 sm:p-8 hover:shadow-xl transition-all duration-300" data-aos="fade-left">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-400 text-xl sm:text-2xl font-bold flex-shrink-0">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-900/30 px-2 py-0.5 rounded border border-cyan-800/50">Participant</span>
+                            <h3 class="text-xl font-black text-white mt-0.5">St. Xavier's Hackathon</h3>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xs sm:text-sm text-gray-400 font-semibold mb-2"><i class="fa-solid fa-building-columns mr-1 text-gray-500"></i> St. Xavier's College</p>
+                <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4">
+                    Collaborated in a high-intensity developer arena. Engineered and pitched custom tech builds while engaging with complex architecture layouts under strict countdown boundaries.
+                </p>
+                <span class="text-xs font-mono text-gray-500 block"><i class="fa-solid fa-calendar-days mr-1"></i> June 2025</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-16 sm:py-24 bg-[#080c14] border-y border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16" data-aos="zoom-in">
+                <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase">Experience</h2>
+                <p class="text-gray-400 text-xs sm:text-sm mt-2">Roles and leadership positions I've embraced</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto relative border-l-2 border-purple-500/40 pl-4 sm:pl-6 ml-2 sm:ml-auto" data-aos="fade-up">
+                <div class="absolute -left-[9px] sm:-left-[11px] top-0 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-purple-500 shadow-lg"></div>
+                
+                <div class="bg-[#111827] border border-gray-800 p-5 sm:p-8 rounded-2xl relative">
+                    <span class="text-[10px] sm:text-xs font-bold text-purple-400 uppercase tracking-wider block mb-2">May 2025 - Mar 2026 · 11 mos</span>
+                    <h3 class="text-xl sm:text-2xl font-black text-white">Head of Programming</h3>
+                    <h4 class="text-sm text-gray-400 font-semibold mt-1">VSN Robotics Club <span class="text-[10px] bg-gray-800 px-2 py-0.5 rounded block sm:inline-block mt-1 sm:mt-0 sm:ml-2 w-max">Hybrid | Tinkune, Kathmandu</span></h4>
+                    
+                    <ul class="mt-4 sm:mt-6 space-y-3 text-xs sm:text-sm text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <span class="text-purple-400 mt-0.5">▹</span> 
+                            <span>Developing new engineering concepts and pipelines for Hackathons and internal projects.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-purple-400 mt-0.5">▹</span> 
+                            <span>Mentoring and delivering high-impact, tech-related workshops to juniors.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 sm:mb-16" data-aos="fade-down">
+            <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase">Certifications</h2>
+            <p class="text-gray-400 text-xs sm:text-sm mt-2">Validated expertise from Broadway Infosys</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <div class="bg-[#111827] p-5 sm:p-6 rounded-2xl border-b-4 border-cyan-500 flex flex-col justify-between" data-aos="flip-up" data-aos-delay="100">
+                <div>
+                    <i class="fa-solid fa-certificate text-cyan-400 text-2xl sm:text-3xl mb-3"></i>
+                    <h3 class="text-lg sm:text-xl font-bold text-white">Professional Web Design</h3>
+                    <p class="text-xs sm:text-sm text-cyan-400 font-semibold mt-0.5">Broadway Infosys</p>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-3">Comprehensive structural training covering layout mechanics, interaction rules, and responsive design paradigms.</p>
+                </div>
+                <span class="text-[11px] font-mono text-gray-500 block mt-4 sm:mt-6">May 7, 2024 - Jul 7, 2024</span>
+            </div>
+
+            <div class="bg-[#111827] p-5 sm:p-6 rounded-2xl border-b-4 border-pink-500 flex flex-col justify-between" data-aos="flip-up" data-aos-delay="200">
+                <div>
+                    <i class="fa-solid fa-certificate text-pink-500 text-2xl sm:text-3xl mb-3"></i>
+                    <h3 class="text-lg sm:text-xl font-bold text-white">Professional Python with Data Science</h3>
+                    <p class="text-xs sm:text-sm text-pink-500 font-semibold mt-0.5">Broadway Infosys</p>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-3">Rigorous logic building focusing on scientific computation libraries, relational exploratory data arrays, and model deployment.</p>
+                </div>
+                <span class="text-[11px] font-mono text-gray-500 block mt-4 sm:mt-6">Jun 7, 2025 - Sep 22, 2025</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#080c14] border-t border-gray-800 pt-12 pb-8 relative overflow-hidden w-full">
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-purple-600/5 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-gray-900">
+            
+            <div class="space-y-4" data-aos="fade-right">
+                <a href="#" class="text-2xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500">AN.DEV</a>
+                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed max-w-sm">
+                    <strong>Aayush Neupane</strong> — Tech Explorer | Python & Front-End Developer | ML, Robotics & Software Aficionado | Passionate About Technology, Innovation & Creativity.
+                </p>
+                <div class="flex space-x-4 pt-1">
+                    <a href="https://github.com/aayushneupane-dev" target="_blank" class="w-9 h-9 rounded-xl bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-400/50 hover:shadow-[0_0_10px_rgba(6,182,212,0.3)] transition-all duration-300">
+                        <i class="fa-brands fa-github text-base"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/aayush-neupane-9ab485375/" target="_blank" class="w-9 h-9 rounded-xl bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-pink-500 hover:border-pink-500/50 hover:shadow-[0_0_10px_rgba(236,72,153,0.3)] transition-all duration-300">
+                        <i class="fa-brands fa-linkedin-in text-base"></i>
+                    </a>
+                    <a href="mailto:aayushneupane822@gmail.com" class="w-9 h-9 rounded-xl bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:text-purple-400 hover:border-purple-400/50 hover:shadow-[0_0_10px_rgba(139,92,246,0.3)] transition-all duration-300">
+                        <i class="fa-solid fa-envelope text-base"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4 md:pl-12" data-aos="fade-up" data-aos-delay="100">
+                <h4 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">Quick Links</h4>
+                <ul class="space-y-2.5 text-xs sm:text-sm text-gray-400 font-medium">
+                    <li><a href="#about" class="hover:text-cyan-400 transition-colors flex items-center gap-2"><span>·</span> About Explorer</a></li>
+                    <li><a href="#skills" class="hover:text-pink-500 transition-colors flex items-center gap-2"><span>·</span> Tech Stack</a></li>
+                    <li><a href="#projects" class="hover:text-amber-400 transition-colors flex items-center gap-2"><span>·</span> Open Source Repos</a></li>
+                    <li><a href="#hackathons" class="hover:text-cyan-400 transition-colors flex items-center gap-2"><span>·</span> Hackathons</a></li>
+                    <li><a href="#experience" class="hover:text-purple-400 transition-colors flex items-center gap-2"><span>·</span> Experience</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-4" data-aos="fade-left" data-aos-delay="200">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-pink-500 animate-pulse"></i>
+                    <h4 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">Base Operations</h4>
+                </div>
+                <p class="text-xs text-cyan-400 font-semibold font-mono">Tinkune, Kathmandu, Nepal</p>
+                
+                <div class="w-full h-36 sm:h-40 rounded-xl overflow-hidden border border-gray-800 shadow-inner group relative">
+                    <iframe 
+                        class="w-full h-full grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                        src="https://maps.google.com/maps?q=Tinkune,%20Kathmandu,%20Nepal&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 flex flex-col sm:flex-row justify-between items-center text-[10px] sm:text-xs text-gray-500 gap-3 text-center sm:text-left">
+            <p>© 2026 Aayush Neupane. All Rights Reserved.</p>
+            <div class="flex space-x-4 sm:space-x-6">
+                <span class="hover:text-gray-400 transition-colors cursor-pointer">Privacy Framework</span>
+                <span class="hover:text-gray-400 transition-colors cursor-pointer">Terms of Architecture</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        // Initialize AOS animations with mobile disable adjustments if needed
+        AOS.init({
+            duration: 800,
+            once: true,
+            disable: window.innerWidth < 480 // Optimizes presentation performance on older iOS devices
+        });
+
+        // Initialize Typed.js for dynamic typing effect
+        var typed = new Typed('#typed', {
+            strings: [
+                'Python & Front-End Developer.',
+                'ML, Robotics & Software Aficionado.',
+                'Passionate About Innovation & Creativity.'
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            loop: true
+        });
+    </script>
+</body>
+</html>
